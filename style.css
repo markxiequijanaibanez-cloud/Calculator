@@ -1,0 +1,116 @@
+ 
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+
+    /* Background image + gradient overlay */
+    background: 
+        linear-gradient(90deg, rgb(0, 0, 0), rgb(245, 241, 241)),
+        url('img/math.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay; /* gradient blends with image */
+}
+
+ 
+.calculator {
+    background: #1c1c1c;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+}
+ 
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+ 
+#display {
+    background: #000;
+    color: #00ffcc;
+    font-size: 36px;
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.8);
+}
+
+ 
+.keys {
+    display: flex;
+    gap: 12px;
+}
+
+ 
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    grid-auto-rows: 65px;
+    gap: 12px;
+}
+ 
+.operators {
+    display: grid;
+    grid-template-rows: repeat(4, 65px);
+    gap: 12px;
+}
+
+ 
+.keys button {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to bottom, #3a3a3a, #1e1e1e);
+    box-shadow: 0 6px 0 #111, 0 10px 18px rgba(0,0,0,0.6);
+    transition: all 0.1s ease;
+}
+
+ 
+.keys button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(to top, rgba(255,255,255,0.15), rgba(255,255,255,0));
+}
+
+ 
+.keys button:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #111, inset 0 3px 6px rgba(0,0,0,0.8);
+}
+ 
+.operators button {
+    background: linear-gradient(to bottom, #ffb347, #ff8c00);
+    color: #000;
+}
+
+ 
+.numbers button:last-child {
+    background: linear-gradient(to bottom, #00ffcc, #00bfa6);
+    color: #000;
+}
+
+ 
+.clear {
+    width: 100%;           
+    padding: 20px 0;        
+    font-size: 28px;        
+    margin-top: 12px;
+    border-radius: 14px;
+    background: linear-gradient(to bottom, #ff4d4d, #c0392b);
+    box-shadow: 0 8px 0 #900, 0 12px 20px rgba(0,0,0,0.6);
+}
